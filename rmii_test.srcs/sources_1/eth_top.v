@@ -12,7 +12,8 @@ module eth_top(
  output wire        eth_tx_en   ,
  output wire  [3:0] eth_tx_data ,       
  output wire        eth_rst_n    ,
- output wire        done
+ output wire        done,
+  input wire        send_en
 );
 
 /**
@@ -144,23 +145,30 @@ axi_traffic_gen_0 u_atg(
   .status()
 );
 
+localparam EDGE = 1'b1;
+reg send_en_reg;
+wire send_en_edge;
+always @(posedge clk or negedge resetn) begin
+  if(!resetn)
+    send_en_reg <= ~EDGE;
+  else
+    send_en_reg <= send_en;
+end
+assign send_en_edge = EDGE ? send_en & ~send_en_reg : ~send_en & send_en_reg;
+
 always @(posedge clk or negedge resetn) begin
   if(!resetn) begin
     atg_en <= 1;
     eth_cnt <= 0;
   end else begin
-    if(done) begin
-      eth_cnt <= eth_cnt + 1;
-      if(eth_cnt == 16'h02FF) begin
-        atg_en <= 0;
-      end
-      if(eth_cnt == 16'h300) begin
-        atg_en <= 1;
-        eth_cnt <= 0;
-      end
+    if(send_en_edge) begin
+      atg_en <= 0;
+    end else begin
+      atg_en <= 1;
     end
   end
 end 
+
 
 reg eth_tx_en_ila, eth_rxdv_ila, eth_rst_n_ila;
 reg [3:0] eth_tx_data_ila, eth_rx_data_ila;
