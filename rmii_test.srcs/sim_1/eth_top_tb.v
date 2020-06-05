@@ -47,4 +47,8 @@ initial begin
 end
 
 always #5 clk = ~clk;
+
+// ff ff ff ff ff ff 00 00 5e 00 fa ce 08 00 45 00 00 36 00 01 40 00 80 11 72 84 c0 a8 03 7b c0 a8 03 66 04 d2 04 d2 00 22 00 00 
+// 01 02 03 04 05 06 07 08 09 0a 0b 0c 01 02 03 04 05 06 07 08 09 0a 0b 0c 0d 0e
+// 0xDDE5C603
 endmodule
