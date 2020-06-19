@@ -3,10 +3,10 @@
 <!--                                                         -->
 <!-- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="40" Path="/home/geralt/Downloads/cobra_test_sys/source/rmii_test/rmii_test.xpr">
+<Project Version="7" Minor="40" Path="/home/geralt/Downloads/cobra_test_sys/source/rmii_test/mii_test.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
-    <Option Name="Id" Val="d71464407eef4d309668ee24cf454344"/>
+    <Option Name="Id" Val="270d4382acd148a1a369ea4fd3cfbabc"/>
     <Option Name="Part" Val="xc7a35ticsg324-1L"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="CompiledLibDirXSim" Val=""/>
@@ -21,7 +21,6 @@
     <Option Name="ActiveSimSet" Val="sim_1"/>
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
     <Option Name="ProjectType" Val="Default"/>
-    <Option Name="IPOutputRepo" Val="$PCACHEDIR/ip"/>
     <Option Name="IPCachePermission" Val="read"/>
     <Option Name="IPCachePermission" Val="write"/>
     <Option Name="EnableCoreContainer" Val="FALSE"/>
@@ -62,6 +61,8 @@
       <Filter Type="Srcs"/>
       <File Path="$PSRCDIR/sources_1/eth_top.v">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/rmii_test.srcs/sources_1/eth_top.v"/>
+          <Attr Name="ImportTime" Val="1591237934"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -69,12 +70,16 @@
       </File>
       <File Path="$PSRCDIR/sources_1/data.coe">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/rmii_test.srcs/sources_1/data.coe"/>
+          <Attr Name="ImportTime" Val="1591345474"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
       <File Path="$PSRCDIR/sources_1/addr.coe">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/rmii_test.srcs/sources_1/addr.coe"/>
+          <Attr Name="ImportTime" Val="1591182947"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
@@ -83,13 +88,15 @@
         <Option Name="DesignMode" Val="RTL"/>
         <Option Name="TopModule" Val="eth_top"/>
         <Option Name="TopAutoSet" Val="TRUE"/>
-        <Option Name="VerilogDir" Val="$PSRCDIR/sources_1/rtl/verilog"/>
+        <Option Name="VerilogDir" Val="$PPRDIR/rmii_test.srcs/sources_1/rtl/verilog"/>
       </Config>
     </FileSet>
     <FileSet Name="constrs_1" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
       <Filter Type="Constrs"/>
       <File Path="$PSRCDIR/constrs_1/rmii_test.xdc">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/rmii_test.srcs/constrs_1/rmii_test.xdc"/>
+          <Attr Name="ImportTime" Val="1591238719"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
         </FileInfo>
@@ -103,13 +110,17 @@
       <Filter Type="Srcs"/>
       <File Path="$PSRCDIR/sim_1/eth_top_tb.v">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/rmii_test.srcs/sim_1/eth_top_tb.v"/>
+          <Attr Name="ImportTime" Val="1591366681"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/eth_top_tb_behav.wcfg">
+      <File Path="$PSRCDIR/sim_1/imports/rmii_test/eth_top_tb_behav.wcfg">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/eth_top_tb_behav.wcfg"/>
+          <Attr Name="ImportTime" Val="1591327926"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
@@ -132,6 +143,8 @@
     <FileSet Name="axi_traffic_gen_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/axi_traffic_gen_0">
       <File Path="$PSRCDIR/sources_1/ip/axi_traffic_gen_0/axi_traffic_gen_0.xci">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/rmii_test.srcs/sources_1/ip/axi_traffic_gen_0/axi_traffic_gen_0.xci"/>
+          <Attr Name="ImportTime" Val="1591161839"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -139,13 +152,15 @@
       </File>
       <Config>
         <Option Name="TopModule" Val="axi_traffic_gen_0"/>
-        <Option Name="VerilogDir" Val="$PSRCDIR/sources_1/rtl/verilog"/>
+        <Option Name="VerilogDir" Val="$PPRDIR/rmii_test.srcs/sources_1/rtl/verilog"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
     <FileSet Name="axi_ethernetlite_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/axi_ethernetlite_0">
       <File Path="$PSRCDIR/sources_1/ip/axi_ethernetlite_0/axi_ethernetlite_0.xci">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/rmii_test.srcs/sources_1/ip/axi_ethernetlite_0/axi_ethernetlite_0.xci"/>
+          <Attr Name="ImportTime" Val="1591169441"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -153,13 +168,15 @@
       </File>
       <Config>
         <Option Name="TopModule" Val="axi_ethernetlite_0"/>
-        <Option Name="VerilogDir" Val="$PSRCDIR/sources_1/rtl/verilog"/>
+        <Option Name="VerilogDir" Val="$PPRDIR/rmii_test.srcs/sources_1/rtl/verilog"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
     <FileSet Name="ila_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/ila_0">
       <File Path="$PSRCDIR/sources_1/ip/ila_0/ila_0.xci">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/rmii_test.srcs/sources_1/ip/ila_0/ila_0.xci"/>
+          <Attr Name="ImportTime" Val="1591081725"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -167,7 +184,7 @@
       </File>
       <Config>
         <Option Name="TopModule" Val="ila_0"/>
-        <Option Name="VerilogDir" Val="$PSRCDIR/sources_1/rtl/verilog"/>
+        <Option Name="VerilogDir" Val="$PPRDIR/rmii_test.srcs/sources_1/rtl/verilog"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
